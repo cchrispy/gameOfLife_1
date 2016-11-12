@@ -16,12 +16,12 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      include: '/src',
-      loaders: ["babel"]
+      include: __dirname + '/src',
+      loader: 'babel'
     },
     {
       test: /\.s?css$/,
-      include: '/src',
+      include: __dirname + '/src',
       loaders: ["style", "css", "sass"]
     }]
   },
