@@ -13,11 +13,13 @@ class Board extends Component {
     return (
       <div id='board'>
         { _.range(3600).map((cell, i) => (
-          <div className={ `cell ${ (i + 1) % 83 === 0 ? 'alive' : '' }` } key={ i + 1 }></div>
+          <div className={ `cell ${ this.props.cellState[i + 1] ? 'alive' : '' }` } key={ i + 1 }></div>
         ))}
       </div>
     )
   }
 }
 
-export default connect()(Board);
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(Board);

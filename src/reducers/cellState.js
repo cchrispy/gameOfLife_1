@@ -4,6 +4,8 @@ const cellState = (state = {}, action) => {
       return Object.assign({}, state, {
         [action.cell]: !state[action.cell]
       });
+    case 'RESET':
+      return {};
     default:
       return state;
   }

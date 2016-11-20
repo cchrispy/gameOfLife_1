@@ -14,8 +14,9 @@ $dead-color: white;
 #board {
   width: 600px;
   line-height: 0;
+  margin: 15px 40px;
 }
 
 .alive {
-  background-color: $alive-color;  
+  background-color: $alive-color;
 }

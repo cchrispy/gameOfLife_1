@@ -9,7 +9,6 @@ class Main extends Component {
   }
 
   render() {
-    console.log('store: ', this.props.store);
     return (
       <div id='main'>
         <h1>Game of Life</h1>
