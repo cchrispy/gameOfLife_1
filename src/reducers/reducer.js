@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import tempReducer from './tempReducer.js';
+import iteration from './iteration.js';
 
 export default combineReducers({
-  tempReducer
+  iteration
 })
