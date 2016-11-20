@@ -13,11 +13,11 @@ class Board extends Component {
     return (
       <div id='board'>
         { _.range(3600).map((cell, i) => (
-          <div className={`cell ${ (i + 1) % 79 === 0 ? 'alive' : '' }`} key={i + 1}></div>
+          <div className={ `cell ${ (i + 1) % 83 === 0 ? 'alive' : '' }` } key={ i + 1 }></div>
         ))}
       </div>
     )
   }
 }
 
-export default Board;
+export default connect()(Board);
