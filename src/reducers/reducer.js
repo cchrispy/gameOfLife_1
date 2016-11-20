@@ -3,4 +3,4 @@ import iteration from './iteration.js';
 
 export default combineReducers({
   iteration
-})
+});
