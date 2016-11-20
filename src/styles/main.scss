@@ -1,3 +1,6 @@
+$alive-color: black;
+$dead-color: white;
+
 .cell {
   display: inline-block;
   width: 10px;
@@ -11,4 +14,8 @@
 #board {
   width: 600px;
   line-height: 0;
+}
+
+.alive {
+  background-color: $alive-color;  
 }
