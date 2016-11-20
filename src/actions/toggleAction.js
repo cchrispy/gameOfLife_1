@@ -1,4 +1,6 @@
-export default const toggle = (cell) => ({
+const toggle = (cell) => ({
   type: 'TOGGLE',
   cell
 })
+
+export default toggle;
