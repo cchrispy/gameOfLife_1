@@ -24,7 +24,7 @@ const getNeighbors = key => {
   } else if (key % 60 === 0) { // right column
     return [key - 1, key - 61, key - 60, key + 59, key + 60];
   } else if ((key - 1) % 60 === 0) { // left column
-    reutrn [key + 1, key - 60, key - 59, key + 60, key + 61];
+    return [key + 1, key - 60, key - 59, key + 60, key + 61];
   }
-  
+
 }
