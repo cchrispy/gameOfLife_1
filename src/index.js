@@ -1,3 +1,26 @@
+/*************************************************************/
+/* * * * * * * * * * CONWAY'S GAME OF LIFE * * * * * * * * * */
+/*************************************************************/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * RULES * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                                           */
+/* 1) Under-populationkey: "value",                          */
+/*    Cells with fewer than 2 live neighbor die              */
+/*                                                           */
+/* 2) Stability:                                             */
+/*    Cells with 2 or 3 live neighbor lives on               */
+/*                                                           */
+/* 3) Over-population:                                       */
+/*    Cells with more than 3 live neighbor die               */
+/*                                                           */
+/* 4) Reproduction:                                          */
+/*    Dead cells with 3 live neighbors becomes alive         */
+/*                                                           */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
