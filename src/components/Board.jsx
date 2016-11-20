@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import '../styles/main.scss';
+
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -16,3 +18,5 @@ class Board extends Component {
     )
   }
 }
+
+export default Board;

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Board from './Board.jsx';
+
+import '../styles/main.scss';
 
 class Main extends Component {
   constructor(props) {
@@ -11,6 +14,7 @@ class Main extends Component {
     return (
       <div>
         <h1>Game of Life</h1>
+        <Board />
       </div>
     )
   }
