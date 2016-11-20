@@ -12,11 +12,7 @@ class Board extends Component {
   render() {
     return (
       <div id='board'>
-        { Array(100).map(row => {
-          return (<div className='cell'>{ Array(100).map(row => (<div className='cell'></div>))}</div>)
-        })}
-        { [1, 2, 3].map(div => (<p>hay</p>))}
-        hi
+        { _.range(3600).map((cell, i) => (<div className='cell' key={i + 1}></div>))}
       </div>
     )
   }

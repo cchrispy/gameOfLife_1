@@ -3,4 +3,12 @@
   width: 10px;
   height: 10px;
   border: 1px solid black;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0;
+}
+
+#board {
+  width: 720px;
+  line-height: 0;
 }
