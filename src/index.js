@@ -5,7 +5,7 @@
 /* * * * * * * * * * * * * * RULES * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                                           */
-/* 1) Under-populationkey: "value",                          */
+/* 1) Under-population:                                      */
 /*    Cells with fewer than 2 live neighbor die              */
 /*                                                           */
 /* 2) Stability:                                             */
