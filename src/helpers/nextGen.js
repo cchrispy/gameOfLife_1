@@ -28,3 +28,5 @@ const getNeighbors = key => {
   }
 
 }
+
+export default nextGen;
