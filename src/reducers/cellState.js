@@ -12,11 +12,12 @@ var temp = { // starting board, hardcoded cells
 const cellState = (state = temp, action) => {
   switch (action.type) {
     case 'TOGGLE':
-      var res = {};
-      action.cells.forEach(cell => {
-        res[cell] = !state[cell]
-      })
-      return Object.assign({}, state, res);
+      // var res = {};
+      // action.cells.forEach(cell => {
+      //   res[cell] = !state[cell]
+      // })
+      // return Object.assign({}, state, res);
+      return Object.assign({}, state, action.cells);
     case 'RESET':
       return {};
     default:
