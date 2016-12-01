@@ -25,7 +25,6 @@ class Board extends Component {
       // })
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
-      this.forceUpdate();
     }, 1000)
   }
 
