@@ -14,7 +14,7 @@ const cellState = (state = temp, action) => {
     case 'TOGGLE':
       var res = {};
       action.cells.forEach(cell => {
-        res[cell]: !state[action[cell]]
+        res[cell] = !state[action[cell]]
       })
       return Object.assign({}, state, res);
       // return Object.assign({}, state, {
