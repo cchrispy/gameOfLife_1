@@ -20,9 +20,9 @@ class Board extends Component {
     // });
     this.iterate = setTimeout(() => {
       console.log(nextGen(this.props.cellState));
-      nextGen(this.props.cellState).forEach(cell => {
-        this.props.toggle(cell);
-      })
+      // nextGen(this.props.cellState).forEach(cell => {
+      //   this.props.toggle(cell);
+      // })
       this.props.iterate('next');
       this.forceUpdate();
     }, 1000)
@@ -46,8 +46,8 @@ class Board extends Component {
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-  toggle: cell => {
-    dispatch(toggle(cell));
+  toggle: cells => {
+    dispatch(toggle(cells));
   },
   iterate: command => {
     if (command === 'next') {
