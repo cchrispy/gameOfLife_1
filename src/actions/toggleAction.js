@@ -1,6 +1,6 @@
-const toggle = (cell) => ({
+const toggle = (cells) => ({
   type: 'TOGGLE',
-  cell
+  cells
 })
 
 export default toggle;
