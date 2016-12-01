@@ -1,5 +1,5 @@
-$alive-color: black;
-$dead-color: white;
+$alive-color: #60DA36;
+$dead-color: #5350F7;
 
 .cell {
   display: inline-block;
@@ -19,4 +19,8 @@ $dead-color: white;
 
 .alive {
   background-color: $alive-color;
+}
+
+.dead {
+  background-color: $dead-color;
 }
