@@ -1,9 +1,11 @@
 const nextGen = cells => {
   // returns an object with the cells that need to be toggled
+  
 }
 
 const liveNeighbors = key => {
   // returns a count of the number of live neighbors a cell has
+
 }
 
 const getNeighbors = key => {
