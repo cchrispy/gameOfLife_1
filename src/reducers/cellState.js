@@ -1,4 +1,4 @@
-var temp = {
+var temp = { // starting board, hardcoded cells
   1300: true, 
   1301: true, 
   1240: true, 
@@ -17,9 +17,6 @@ const cellState = (state = temp, action) => {
         res[cell] = !state[cell]
       })
       return Object.assign({}, state, res);
-      // return Object.assign({}, state, {
-      //   [action.cell]: !state[action.cell]
-      // });
     case 'RESET':
       return {};
     default:
