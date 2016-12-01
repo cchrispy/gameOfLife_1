@@ -2,6 +2,7 @@ const nextGen = cells => {
   // returns an object with the cells that need to be toggled
 
   var toggleCells = {};
+  var results = [];
   for (var prop in cells) {
     var cell = +prop;
     if (liveNeighbors(cells, cell) < 2 || liveNeighbors(cells, cell) > 3) {
@@ -18,8 +19,10 @@ const nextGen = cells => {
       }
     })
   }
-
-  return toggleCells;
+  for (var prop in toggleCells) {
+    results.push(+prop);
+  }
+  return results;
 }
 
 const liveNeighbors = (cells, key) => {
