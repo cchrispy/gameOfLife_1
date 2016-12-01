@@ -15,21 +15,15 @@ class Board extends Component {
   componentWillMount() {
     // var cells = [/*1700, 1699, 1701, 1702, 1703, 1640, 1760, */
     //              1300, 1301, 1240, 1241, 1242, 1182, 1183];
-    // cells.forEach(cell => {
-    //   this.props.toggle(cell);
-    // });
     this.iterate = setTimeout(() => {
-      console.log(nextGen(this.props.cellState));
-      // nextGen(this.props.cellState).forEach(cell => {
-      //   this.props.toggle(cell);
-      // })
+      // console.log(nextGen(this.props.cellState));
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
     }, 1000)
   }
 
   componentWillUnmount() {
-    clearInterval(this.iterate);
+    // clearInterval(this.iterate);
   }
 
   render() {
