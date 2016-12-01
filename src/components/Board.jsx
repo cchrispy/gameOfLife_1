@@ -16,14 +16,13 @@ class Board extends Component {
     // var cells = [/*1700, 1699, 1701, 1702, 1703, 1640, 1760, */
     //              1300, 1301, 1240, 1241, 1242, 1182, 1183];
     this.iterate = setTimeout(() => {
-      console.log(nextGen(this.props.cellState));
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
-    }, 2000)
+    }, 1000)
   }
 
   componentWillUnmount() {
-    // clearInterval(this.iterate);
+    clearInterval(this.iterate);
   }
 
   render() {
