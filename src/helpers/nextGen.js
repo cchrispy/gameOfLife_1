@@ -2,7 +2,8 @@ const nextGen = cells => {
   // returns an object with the cells that need to be toggled
 
   var toggleCells = {};
-  var results = [];
+  // var results = [];
+  var results = Object.assign({}, cells);
   for (var prop in cells) {
     var cell = +prop;
     if (liveNeighbors(cells, cell) < 2 || liveNeighbors(cells, cell) > 3) {
@@ -19,15 +20,18 @@ const nextGen = cells => {
       }
     })
   }
+  // for (var prop in toggleCells) {
+  //   results.push(+prop);
+  // }
   for (var prop in toggleCells) {
-    results.push(+prop);
+    results[prop] = !results[prop];
   }
   return results;
 }
 
 const liveNeighbors = (cells, key) => {
   // returns a count of the number of live neighbors a cell has
-  
+
   var neighbors = getNeighbors(key);
   return neighbors.reduce((count, cell) => {
     if (cells[cell]) {
