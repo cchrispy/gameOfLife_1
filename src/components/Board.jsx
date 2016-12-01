@@ -17,11 +17,16 @@ class Board extends Component {
     cells.forEach(cell => {
       this.props.toggle(cell);
     });
+
+    var iterate = setTimeout(() => {
+      nextGen(this.props.cellState).forEach(cell => {
+        this.props.toggle(cell);
+      })
+      this.forceUpdate();
+    }, 1000)
   }
 
   render() {
-    console.log('cellState: ', this.props.cellState);
-    console.log('toggleCells: ', nextGen(this.props.cellState));
     return (
       <div id='board'>
         { _.range(3600).map((cell, i) => (
