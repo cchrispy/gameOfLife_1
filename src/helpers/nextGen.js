@@ -4,20 +4,22 @@ const nextGen = cells => {
   var toggleCells = {};
   var results = Object.assign({}, cells);
   for (var prop in cells) {
-    var cell = +prop;
-    if (liveNeighbors(cells, cell) < 2 || liveNeighbors(cells, cell) > 3) {
-      // collect the live cells that should be toggled
-      toggleCells[cell] = true;
-    }
-    var neighbors = getNeighbors(cell);
-    neighbors.forEach(neighbor => {
-      if (!cells[neighbor]) {
-        // collect the dead cells that should be toggled;
-        if (liveNeighbors(cells, neighbor) === 3) {
-          toggleCells[neighbor] = true;
-        }
+    if (cells[prop]) {
+      var cell = +prop;
+      if (liveNeighbors(cells, cell) < 2 || liveNeighbors(cells, cell) > 3) {
+        // collect the live cells that should be toggled
+        toggleCells[cell] = true;
       }
-    })
+      var neighbors = getNeighbors(cell);
+      neighbors.forEach(neighbor => {
+        if (!cells[neighbor]) {
+          // collect the dead cells that should be toggled;
+          if (liveNeighbors(cells, neighbor) === 3) {
+            toggleCells[neighbor] = true;
+          }
+        }
+      })
+    }
   }
   for (var prop in toggleCells) { // toggle the cells that need to be toggled
     results[prop] = !results[prop];
