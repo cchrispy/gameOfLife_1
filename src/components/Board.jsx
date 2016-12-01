@@ -18,14 +18,14 @@ class Board extends Component {
     // cells.forEach(cell => {
     //   this.props.toggle(cell);
     // });
-    this.iterate = setInterval(() => {
-      console.log(nextGen(this.props.cellState).length);
+    this.iterate = setTimeout(() => {
+      console.log(nextGen(this.props.cellState));
       nextGen(this.props.cellState).forEach(cell => {
         this.props.toggle(cell);
       })
       this.props.iterate('next');
       this.forceUpdate();
-    }, 500)
+    }, 1000)
   }
 
   componentWillUnmount() {
