@@ -2,7 +2,6 @@ const nextGen = cells => {
   // returns an object with the cells that need to be toggled
 
   var toggleCells = {};
-  // var results = [];
   var results = Object.assign({}, cells);
   for (var prop in cells) {
     var cell = +prop;
@@ -20,10 +19,7 @@ const nextGen = cells => {
       }
     })
   }
-  // for (var prop in toggleCells) {
-  //   results.push(+prop);
-  // }
-  for (var prop in toggleCells) {
+  for (var prop in toggleCells) { // toggle the cells that need to be toggled
     results[prop] = !results[prop];
   }
   return results;
