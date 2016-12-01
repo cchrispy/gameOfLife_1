@@ -1,6 +1,5 @@
 const nextGen = cells => {
   // returns an object with the cells that need to be toggled
-
   var toggleCells = {};
   var results = [];
   for (var prop in cells) {
