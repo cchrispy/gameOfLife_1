@@ -13,11 +13,11 @@ class Board extends Component {
   }
 
   componentWillMount() {
-    var cells = [/*1700, 1699, 1701, 1702, 1703, 1640, 1760, */
-                 1300, 1301, 1240, 1241, 1242, 1182, 1183];
-    cells.forEach(cell => {
-      this.props.toggle(cell);
-    });
+    // var cells = [/*1700, 1699, 1701, 1702, 1703, 1640, 1760, */
+    //              1300, 1301, 1240, 1241, 1242, 1182, 1183];
+    // cells.forEach(cell => {
+    //   this.props.toggle(cell);
+    // });
     this.iterate = setInterval(() => {
       console.log(nextGen(this.props.cellState).length);
       nextGen(this.props.cellState).forEach(cell => {
@@ -25,7 +25,7 @@ class Board extends Component {
       })
       this.props.iterate('next');
       this.forceUpdate();
-    }, 1000)
+    }, 500)
   }
 
   componentWillUnmount() {
