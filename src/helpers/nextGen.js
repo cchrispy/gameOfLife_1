@@ -1,12 +1,18 @@
 const nextGen = cells => {
   // returns an object with the cells that need to be toggled
-  
+  return liveNeighbors;
 }
 
-const liveNeighbors = key => {
+const liveNeighbors = (cells, key) => {
   // returns a count of the number of live neighbors a cell has
-
-}
+  var neighbors = getNeighbors(key);
+  return neighbors.reduce((count, cell) => {
+    if (cells[cell]) {
+      return count + 1;
+    }
+    return count;
+  }, 0)
+};
 
 const getNeighbors = key => {
   // returns an array a cell's neighbors
@@ -27,6 +33,8 @@ const getNeighbors = key => {
     return [key - 1, key - 61, key - 60, key + 59, key + 60];
   } else if ((key - 1) % 60 === 0) { // left column
     return [key + 1, key - 60, key - 59, key + 60, key + 61];
+  } else { // non-edge cells
+    return [key - 61, key - 60, key - 59, key - 1, key + 1, key + 59, key + 60, key + 61];
   }
 
 }
