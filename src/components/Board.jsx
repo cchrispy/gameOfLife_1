@@ -21,7 +21,7 @@ class Board extends Component {
 
   render() {
     console.log('cellState: ', this.props.cellState);
-    console.log('live neighbors: ', nextGen()(this.props.cellState, 1183));
+    console.log('toggleCells: ', nextGen(this.props.cellState));
     return (
       <div id='board'>
         { _.range(3600).map((cell, i) => (
