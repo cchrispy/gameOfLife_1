@@ -5,8 +5,6 @@ import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 import nextGen from '../helpers/nextGen.js';
 
-import '../styles/main.scss';
-
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,7 @@ class Board extends Component {
     this.iterate = setTimeout(() => {
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
-    }, 500)
+    }, 0)
   }
 
   componentWillUnmount() {
@@ -25,7 +23,7 @@ class Board extends Component {
 
   render() {
     return (
-      <div id='board'>
+      <div id='board' className='center'>
         { _.range(3600).map((cell, i) => (
           <div className={ `cell ${ this.props.cellState[i + 1] ? 'alive' : '' }` } key={ i + 1 }></div>
         ))}

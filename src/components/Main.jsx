@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Board from './Board.jsx';
+import '../styles/main.scss';
 
 import toggle from '../actions/toggleAction.js';
 
@@ -36,14 +37,16 @@ class Main extends Component {
     }
     // this.props.toggle(temp);
     // this.props.toggle(shapes.random(300));
-    this.props.toggle(shapes.glider(1300));
+    this.props.toggle(shapes.glider(1900));
+    this.props.toggle(shapes.blinker(1600));
   }
 
   render() {
     return (
       <div id='main'>
-        <h1>Game of Life</h1>
+        <h1 className='center'>Game of Life</h1>
         <Board />
+        <h2 className='center'>Iteration: { this.props.store.iteration }</h2>
       </div>
     )
   }
