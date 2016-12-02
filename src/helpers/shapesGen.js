@@ -22,7 +22,11 @@ var shapes = { // shapes will be returned as objects with proper cells
   },
 
   blinker: key => {
-
+    return {
+      [key]: true,
+      [key + 60]: true,
+      [key + 120]: true
+    }
   },
 
   gliderGun: key => {
@@ -32,7 +36,7 @@ var shapes = { // shapes will be returned as objects with proper cells
   random: count => {
     var cells = {};
     for (var i = 0; i < count; i++) {
-      cells[Math.floor(Math.random() * 3400) + 100] = true;
+      cells[Math.floor(Math.random() * 3600)] = true;
     }
     return cells;
   }
