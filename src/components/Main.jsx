@@ -4,6 +4,8 @@ import Board from './Board.jsx';
 
 import toggle from '../actions/toggleAction.js';
 
+import shapes from '../helpers/shapesGen.js';
+
 
 class Main extends Component {
   constructor(props) {
@@ -32,10 +34,9 @@ class Main extends Component {
       // 2019: true,
       // 2020: true
     }
-    for (var i = 0; i < 400; i++) {
-      temp[Math.floor(Math.random()*3400) + 100] = true;
-    }
-    this.props.toggle(temp);
+    // this.props.toggle(temp);
+    // this.props.toggle(shapes.random(300));
+    this.props.toggle(shapes.glider(1300));
   }
 
   render() {

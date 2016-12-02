@@ -1,26 +1,40 @@
 var shapes = { // shapes will be returned as objects with proper cells
-  glider: () => {
+  glider: key => {
+    return {
+      [key]: true,
+      [key + 58]: true,
+      [key + 60]: true,
+      [key + 119]: true,
+      [key + 120]: true
+    }
+  },
+
+  lightweightSpaceship: key => {
 
   },
 
-  lightweightSpaceship: () => {
+  pulsar: key => {
 
   },
 
-  pulsar: () => {
+  beacon: key => {
 
   },
 
-  beacon: () => {
+  blinker: key => {
 
   },
 
-  blinker: () => {
-
-  },
-
-  gliderGun: () => {
+  gliderGun: key => {
     // https://en.wikipedia.org/wiki/Gun_(cellular_automaton)
+  },
+
+  random: count => {
+    var cells = {};
+    for (var i = 0; i < count; i++) {
+      cells[Math.floor(Math.random() * 3400) + 100] = true;
+    }
+    return cells;
   }
 }
 
