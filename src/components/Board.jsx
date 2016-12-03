@@ -10,11 +10,11 @@ class Board extends Component {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.iterate = setTimeout(() => {
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
-    }, 0)
+    }, 400)
   }
 
   componentWillUnmount() {
