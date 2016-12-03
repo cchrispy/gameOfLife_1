@@ -39,6 +39,7 @@ class Main extends Component {
     // this.props.toggle(shapes.random(300));
     this.props.toggle(shapes.glider(1900));
     this.props.toggle(shapes.blinker(1600));
+    this.props.toggle(shapes.random(500));
   }
 
   render() {
