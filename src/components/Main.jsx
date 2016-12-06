@@ -5,6 +5,7 @@ import Options from './Options.jsx';
 import '../styles/main.scss';
 
 import toggle from '../actions/toggleAction.js';
+import { next, prev, reset } from '../actions/iterationAction.js';
 
 import shapes from '../helpers/shapesGen.js';
 
@@ -19,31 +20,21 @@ class Main extends Component {
 
   componentWillMount() {
     var temp = { // starting board, hardcoded cells
-      // 1300: true, 
-      // 1301: true, 
-      // 1240: true, 
-      // 1241: true, 
-      // 1242: true, 
-      // 1182: true, 
-      // 1183: true,
+      // 1300: true, 1301: true, 1240: true, 1241: true, 
+      // 1242: true, 1182: true, 1183: true,
 
-      // 1400: true,
-      // 1401: true,
-      // 1460: true,
-      // 1461: true,
-      // 1462: true,
+      // 1400: true, 1401: true, 1460: true, 1461: true, 1462: true,
 
-      // 1900: true,
-      // 1958: true,
-      // 1960: true,
-      // 2019: true,
-      // 2020: true
+      // 1900: true, 1958: true, 1960: true, 2019: true, 2020: true
     }
     // this.props.toggle(temp);
-    // this.props.toggle(shapes.random(300));
     // this.props.toggle(shapes.glider(1900));
     // this.props.toggle(shapes.blinker(1600));
     this.props.toggle(shapes.random(400));
+  }
+
+  iterate() {
+    
   }
 
   startButton(e) {
@@ -84,7 +75,7 @@ class Main extends Component {
               </p>
 
               <Options />
-              
+
             </div>
 
           </div>
@@ -101,6 +92,13 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   toggle: cells => {
     dispatch(toggle(cells))
+  },
+  iterate: command => {
+    if (command === 'next') {
+      dispatch(next());
+    } else if (command === 'reset') {
+      dispatch(reset());
+    }
   }
 })
 
