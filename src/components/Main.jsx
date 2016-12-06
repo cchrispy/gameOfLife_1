@@ -48,10 +48,10 @@ class Main extends Component {
         <h1 className='center'>Game of Life</h1>
         <div className='container'>
           <div className='row'>
-            <div className='col-lg-6 col-xs-12' >
+            <div className='col-lg-8 col-md-12 col-sm-12 col-xs-12' >
               <Board />
             </div>
-            <div className='col-lg-6 col-xs-12 left-border'>
+            <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12'>
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
             </div>
           </div>
