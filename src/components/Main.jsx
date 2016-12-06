@@ -38,9 +38,9 @@ class Main extends Component {
     }
     // this.props.toggle(temp);
     // this.props.toggle(shapes.random(300));
-    this.props.toggle(shapes.glider(1900));
-    this.props.toggle(shapes.blinker(1600));
-    this.props.toggle(shapes.random(500));
+    // this.props.toggle(shapes.glider(1900));
+    // this.props.toggle(shapes.blinker(1600));
+    this.props.toggle(shapes.random(400));
   }
 
   render() {
@@ -54,6 +54,10 @@ class Main extends Component {
             </div>
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
+              <p className='center'>
+                <button type='button' className='btn btn-success btn-lg iteration-btn'>Start</button>
+                <button type='button' className='btn btn-danger btn-lg iteration-btn'>Stop</button>
+              </p>
               <Options />
             </div>
           </div>

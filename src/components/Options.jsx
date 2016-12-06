@@ -28,7 +28,6 @@ class Options extends Component {
 
   submit(e) {
     e.preventDefault();
-    console.log('submitted: ', e.target);
   }
 
   render() {
