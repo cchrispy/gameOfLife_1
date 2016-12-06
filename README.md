@@ -1,4 +1,5 @@
-# Conway's Game Of Life
+# Conway's Game Of Life  
+Javascript simulation of Conway's Game Of Life
 
 ## Setup
 Clone down repository  
@@ -11,4 +12,4 @@ Compile src files
 `npm run build`
 
 Open index file  
-`open src/dist/index.html`
+`open dist/index.html`
