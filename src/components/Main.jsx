@@ -12,6 +12,9 @@ import shapes from '../helpers/shapesGen.js';
 class Main extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      started: false
+    }
   }
 
   componentWillMount() {
@@ -43,6 +46,16 @@ class Main extends Component {
     this.props.toggle(shapes.random(400));
   }
 
+  startButton(e) {
+    e.preventDefault();
+
+  }
+
+  stopButton(e) {
+    e.preventDefault();
+
+  }
+
   render() {
     return (
       <div id='main'>
@@ -55,8 +68,12 @@ class Main extends Component {
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
               <p className='center'>
-                <button type='button' className='btn btn-success btn-lg iteration-btn'>Start</button>
-                <button type='button' className='btn btn-danger btn-lg iteration-btn'>Stop</button>
+                <button type='button' 
+                        className={`btn btn-success btn-lg iteration-btn`}
+                        onClick={ this.startButton.bind(this) } >Start</button>
+                <button type='button' 
+                        className={`btn btn-danger btn-lg iteration-btn`}
+                        onClick={ this.stopButton.bind(this) } >Stop</button>
               </p>
               <Options />
             </div>
