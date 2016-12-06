@@ -80,7 +80,8 @@ class Main extends Component {
 
               <p className='center'>
                 <button type='button' 
-                        className={ `btn btn-success btn-lg iteration-btn ${ this.state.started ? 'active' : '' }` }
+                        className={ `btn btn-success btn-lg iteration-btn` }
+                        disabled={ `${ this.state.started ? 'disabled' : '' }` }
                         onClick={ this.startButton.bind(this) } >Start</button>
                 <button type='button' 
                         className={ `btn btn-danger btn-lg iteration-btn` } 

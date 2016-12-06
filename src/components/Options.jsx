@@ -6,7 +6,8 @@ class Options extends Component {
     super(props);
     this.state = {
       cellCountInput: 400,
-      gliderCountInput: 0
+      gliderCountInput: 0,
+      blinkerCountInput: 0
     }
   }
 
@@ -14,7 +15,8 @@ class Options extends Component {
     e.preventDefault();
     this.setState({
       cellCountInput: e.target.value,
-      gliderCountInput: 0
+      gliderCountInput: 0,
+      blinkerCountInput: 0
     })
   }
 
@@ -23,6 +25,14 @@ class Options extends Component {
     this.setState({
       cellCountInput: 0,
       gliderCountInput: e.target.value
+    })
+  }
+
+  adjustBlinkerCount(e) {
+    e.preventDefault();
+    this.setState({
+      cellCountInput: 0,
+      blinkerCountInput: e.target.value
     })
   }
 
@@ -56,6 +66,18 @@ class Options extends Component {
                    onChange={ this.adjustGliderCount.bind(this) }
                    id='gliderCount' ></input>
           </div>
+          <div className='form-group'>
+            <label htmlFor='blinkerCount'>Number of blinkers: { this.state.blinkerCountInput } </label>
+            <input type='range'
+                   min='0'
+                   max='10'
+                   value={ this.state.blinkerCountInput }
+                   step='1'
+                   className='form-control'
+                   onChange={ this.adjustBlinkerCount.bind(this) }
+                   id='blinkerCount' ></input>
+          </div>
+
           <button type='submit' className='btn btn-primary'>Submit</button>
         </form>
       </div>
