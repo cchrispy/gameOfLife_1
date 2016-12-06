@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { adjustCellCount, adjustGliderCount, adjustBlinkerCount } from '../actions/statsAction.js';
+
 class Options extends Component {
   constructor(props) {
     super(props);
@@ -91,7 +93,15 @@ class Options extends Component {
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-
+  adjustCellCount: cellCount => {
+    dispatch(adjustCellCount(cellCount));
+  },
+  adjustGliderCount: gliderCount => {
+    dispatch(adjustGliderCount(gliderCount));
+  },
+  adjustBlinkerCount: blinkerCount => {
+    dispatch(adjustBlinkerCount(blinkerCount));
+  }
 })
 
-export default connect()(Options);
+export default connect(mapStateToProps, mapDispatchToProps)(Options);
