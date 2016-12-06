@@ -64,7 +64,7 @@ class Main extends Component {
   render() {
     return (
       <div id='main'>
-        <h1 className='center'>Game of Life</h1>
+        <h1 className='center title'>Game of Life</h1>
         <div className='container'>
           <div className='row'>
 
