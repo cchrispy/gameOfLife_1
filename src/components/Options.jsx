@@ -90,7 +90,7 @@ class Options extends Component {
   }
 }
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => state.stats;
 
 const mapDispatchToProps = dispatch => ({
   adjustCellCount: cellCount => {

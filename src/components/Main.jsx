@@ -6,6 +6,7 @@ import '../styles/main.scss';
 
 import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
+import { adjustCellCount } from '../actions/statsAction.js';
 
 import nextGen from '../helpers/nextGen.js';
 import shapes from '../helpers/shapesGen.js';
@@ -20,6 +21,9 @@ class Main extends Component {
   }
 
   componentWillMount() {
+    // this.props.initialCellCount(400);
+    // console.log('main: ', this.props.store);
+
     var temp = { // starting board, hardcoded cells
       // 1300: true, 1301: true, 1240: true, 1241: true, 
       // 1242: true, 1182: true, 1183: true,
@@ -32,6 +36,10 @@ class Main extends Component {
     // this.props.toggle(shapes.glider(1900));
     // this.props.toggle(shapes.blinker(1600));
     this.props.toggle(shapes.random(400));
+  }
+
+  componentDidMount() {
+    // this.props.toggle(shapes.random(this.props.store.stats.cellCount));
   }
 
   simulate() {
@@ -124,6 +132,9 @@ const mapDispatchToProps = dispatch => ({
     } else if (command === 'reset') {
       dispatch(reset());
     }
+  },
+  initialCellCount: count => {
+    dispatch(adjustCellCount(count));
   }
 })
 
