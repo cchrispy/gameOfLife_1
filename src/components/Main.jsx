@@ -48,12 +48,16 @@ class Main extends Component {
 
   startButton(e) {
     e.preventDefault();
-
+    this.setState({
+      started: true
+    })
   }
 
   stopButton(e) {
     e.preventDefault();
-
+    this.setState({
+      started: false
+    })
   }
 
   render() {
@@ -62,21 +66,27 @@ class Main extends Component {
         <h1 className='center'>Game of Life</h1>
         <div className='container'>
           <div className='row'>
+
             <div className='col-lg-7 col-md-12 col-sm-12 col-xs-12' >
               <Board />
             </div>
+
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
               <p className='center'>
                 <button type='button' 
-                        className={`btn btn-success btn-lg iteration-btn`}
+                        className={ `btn btn-success btn-lg iteration-btn ${ this.state.started ? 'active' : '' }` }
                         onClick={ this.startButton.bind(this) } >Start</button>
                 <button type='button' 
-                        className={`btn btn-danger btn-lg iteration-btn`}
+                        className={ `btn btn-danger btn-lg iteration-btn` } 
+                        disabled={ `${ this.state.started ? '' : 'disabled' }` } 
                         onClick={ this.stopButton.bind(this) } >Stop</button>
               </p>
+
               <Options />
+              
             </div>
+
           </div>
         </div>
       </div>
