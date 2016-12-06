@@ -53,6 +53,7 @@ class Options extends Component {
                    step='1'
                    className='form-control' 
                    onChange={ this.adjustCellCount.bind(this) } 
+                   disabled={ this.props.simulationRunning ? true : false } 
                    id='cellCount' ></input>
           </div>
           <div className='form-group'>
@@ -64,6 +65,7 @@ class Options extends Component {
                    step='1'
                    className='form-control'
                    onChange={ this.adjustGliderCount.bind(this) }
+                   disabled={ this.props.simulationRunning ? true : false } 
                    id='gliderCount' ></input>
           </div>
           <div className='form-group'>
@@ -75,6 +77,7 @@ class Options extends Component {
                    step='1'
                    className='form-control'
                    onChange={ this.adjustBlinkerCount.bind(this) }
+                   disabled={ this.props.simulationRunning ? true : false } 
                    id='blinkerCount' ></input>
           </div>
 

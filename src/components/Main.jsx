@@ -61,6 +61,15 @@ class Main extends Component {
     this.endSimulation();
   }
 
+  resetButton(e) {
+    e.preventDefault();
+    this.setState({
+      started: false
+    });
+    this.endSimulation();
+    this.props.iterate('reset');
+  }
+
   render() {
     return (
       <div id='main'>
@@ -76,7 +85,7 @@ class Main extends Component {
 
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
 
-              <Options />
+              <Options simulationRunning={ this.state.started } />
 
               <p className='center'>
                 <button type='button' 
@@ -87,6 +96,9 @@ class Main extends Component {
                         className={ `btn btn-danger btn-lg iteration-btn` } 
                         disabled={ `${ this.state.started ? '' : 'disabled' }` } 
                         onClick={ this.stopButton.bind(this) } >Stop</button>
+                <button type='button' 
+                        className='btn btn-default btn-lg iteration-btn' 
+                        onClick={ this.resetButton.bind(this) } >Reset</button>
               </p>
 
             </div>
