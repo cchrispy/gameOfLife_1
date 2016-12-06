@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Board from './Board.jsx';
+import Options from './Options.jsx';
 import '../styles/main.scss';
 
 import toggle from '../actions/toggleAction.js';
@@ -53,6 +54,7 @@ class Main extends Component {
             </div>
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
+              <Options />
             </div>
           </div>
         </div>
