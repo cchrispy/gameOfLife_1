@@ -10,7 +10,16 @@ class Options extends Component {
     return (
       <div>
         <div className='form-group'>
-          
+          <label htmlFor='cellCount'>Number of cells</label>
+          <input type='range' 
+                 min='10'
+                 max='3000'
+                 value='400'
+                 className='form-control' 
+                 id='cellCount' ></input>
+        </div>
+        <div className='form-group'>
+
         </div>
       </div>
     )
