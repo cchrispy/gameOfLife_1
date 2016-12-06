@@ -46,7 +46,9 @@ class Main extends Component {
     return (
       <div id='main'>
         <h1 className='center'>Game of Life</h1>
-        <Board />
+        <div>
+          <Board />
+        </div>
         <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
       </div>
     )

@@ -11,7 +11,7 @@ class Board extends Component {
   }
 
   componentDidMount() {
-    this.iterate = setInterval(() => {
+    this.iterate = setTimeout(() => {
       this.props.toggle(nextGen(this.props.cellState));
       this.props.iterate('next');
     }, 100)
