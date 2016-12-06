@@ -18,7 +18,7 @@ class Board extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.iterate);
+    // clearInterval(this.iterate);
   }
 
   render() {
