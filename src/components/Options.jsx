@@ -35,7 +35,7 @@ class Options extends Component {
       <div>
         <form onSubmit={ this.submit.bind(this) } >
           <div className='form-group'>
-            <label htmlFor='cellCount'>Number of cells: { this.state.cellCountInput } </label>
+            <label htmlFor='cellCount'>Number of starting cells: { this.state.cellCountInput } </label>
             <input type='range' 
                    min='10'
                    max='1000'

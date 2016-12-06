@@ -7,6 +7,7 @@ import '../styles/main.scss';
 import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 
+import nextGen from '../helpers/nextGen.js';
 import shapes from '../helpers/shapesGen.js';
 
 
@@ -33,15 +34,20 @@ class Main extends Component {
     this.props.toggle(shapes.random(400));
   }
 
-  iterate() {
-    
+  simulate() {
+    // this.iterate = setTimeout(() => {
+    //   this.props.toggle(nextGen(this.props.cellState));
+    // }, 500);
+    this.props.toggle(nextGen(this.props.store.cellState));
+    this.props.iterate('next');
   }
 
   startButton(e) {
     e.preventDefault();
     this.setState({
       started: true
-    })
+    });
+    this.simulate();
   }
 
   stopButton(e) {
@@ -63,7 +69,11 @@ class Main extends Component {
             </div>
 
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
+
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
+              
+              <Options />
+
               <p className='center'>
                 <button type='button' 
                         className={ `btn btn-success btn-lg iteration-btn ${ this.state.started ? 'active' : '' }` }
@@ -73,8 +83,6 @@ class Main extends Component {
                         disabled={ `${ this.state.started ? '' : 'disabled' }` } 
                         onClick={ this.stopButton.bind(this) } >Stop</button>
               </p>
-
-              <Options />
 
             </div>
 
