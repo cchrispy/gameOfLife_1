@@ -42,7 +42,7 @@ class Options extends Component {
 
   render() {
     return (
-      <div>
+      <div id='options'>
         <form onSubmit={ this.submit.bind(this) } >
           <div className='form-group'>
             <label htmlFor='cellCount'>Number of starting cells: { this.state.cellCountInput } </label>

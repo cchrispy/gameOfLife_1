@@ -83,7 +83,7 @@ class Main extends Component {
 
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
 
-              <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
+              <h2 className='center no-margin'>Iteration: { this.props.store.iteration }</h2>
 
               <Options simulationRunning={ this.state.started } />
 
