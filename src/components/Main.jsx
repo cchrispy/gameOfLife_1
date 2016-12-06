@@ -38,8 +38,14 @@ class Main extends Component {
     // this.iterate = setTimeout(() => {
     //   this.props.toggle(nextGen(this.props.cellState));
     // }, 500);
-    this.props.toggle(nextGen(this.props.store.cellState));
-    this.props.iterate('next');
+    this.iterate = setInterval(() => {
+      this.props.toggle(nextGen(this.props.store.cellState));
+      this.props.iterate('next');
+    }, 500)
+  }
+
+  endSimulation() {
+    clearInterval(this.iterate);
   }
 
   startButton(e) {
@@ -54,7 +60,8 @@ class Main extends Component {
     e.preventDefault();
     this.setState({
       started: false
-    })
+    });
+    this.endSimulation();
   }
 
   render() {
@@ -71,7 +78,7 @@ class Main extends Component {
             <div className='col-lg-5 col-md-12 col-sm-12 col-xs-12'>
 
               <h3 className='center no-margin'>Iteration: { this.props.store.iteration }</h3>
-              
+
               <Options />
 
               <p className='center'>
