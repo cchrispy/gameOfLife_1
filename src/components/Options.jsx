@@ -62,7 +62,7 @@ class Options extends Component {
             <label htmlFor='gliderCount'>Number of gliders: { this.state.gliderCountInput } </label>
             <input type='range'
                    min='0'
-                   max='10'
+                   max='12'
                    value={ this.state.gliderCountInput }
                    step='1'
                    className='form-control'
@@ -74,7 +74,7 @@ class Options extends Component {
             <label htmlFor='blinkerCount'>Number of blinkers: { this.state.blinkerCountInput } </label>
             <input type='range'
                    min='0'
-                   max='10'
+                   max='12'
                    value={ this.state.blinkerCountInput }
                    step='1'
                    className='form-control'
