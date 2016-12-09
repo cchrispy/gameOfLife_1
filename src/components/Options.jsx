@@ -43,7 +43,7 @@ class Options extends Component {
 
   submit(e) {
     e.preventDefault();
-    this.props.toggle(shapes.random(this.state.cellCountInput));
+    this.props.newBoard(shapes.random(this.state.cellCountInput));
   }
 
   render() {
@@ -108,7 +108,7 @@ const mapDispatchToProps = dispatch => ({
   adjustBlinkerCount: blinkerCount => {
     dispatch(adjustBlinkerCount(blinkerCount));
   },
-  toggle: cells => {
+  newBoard: cells => {
     dispatch(reset());
     dispatch(toggle(cells));
   }

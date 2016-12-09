@@ -46,7 +46,7 @@ class Main extends Component {
     this.iterate = setInterval(() => {
       this.props.toggle(nextGen(this.props.store.cellState));
       this.props.iterate('next');
-    }, 400)
+    }, 10)
   }
 
   endSimulation() {
