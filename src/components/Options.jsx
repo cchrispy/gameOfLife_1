@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import toggle from '../actions/toggleAction.js';
+import { next, prev, reset } from '../actions/iterationAction.js';
+import shapes from '../helpers/shapesGen.js';
 import { adjustCellCount, adjustGliderCount, adjustBlinkerCount } from '../actions/statsAction.js';
 
 class Options extends Component {
@@ -40,6 +43,7 @@ class Options extends Component {
 
   submit(e) {
     e.preventDefault();
+    this.props.toggle(shapes.random(this.state.cellCountInput));
   }
 
   render() {
@@ -103,6 +107,10 @@ const mapDispatchToProps = dispatch => ({
   },
   adjustBlinkerCount: blinkerCount => {
     dispatch(adjustBlinkerCount(blinkerCount));
+  },
+  toggle: cells => {
+    dispatch(reset());
+    dispatch(toggle(cells));
   }
 })
 
