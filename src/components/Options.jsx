@@ -83,7 +83,9 @@ class Options extends Component {
                    id='blinkerCount' ></input>
           </div>
 
-          <button type='submit' className='btn btn-primary'>Submit</button>
+          <button type='submit' 
+                  className='btn btn-primary' 
+                  disabled={ this.props.simulationRunning ? 'disabled' : '' } >Submit</button>
         </form>
       </div>
     )
