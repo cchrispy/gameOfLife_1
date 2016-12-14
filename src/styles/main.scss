@@ -5,10 +5,16 @@ $dead-color: #5350F7;
   display: inline-block;
   width: 10px;
   height: 10px;
-  border: 1px solid #b3b3b3;
+  border: 1px solid white;
   margin: 0px;
   padding: 0px;
   line-height: 0;
+}
+
+.borders {
+  .cell {
+    border: 1px solid #b3b3b3;
+  }
 }
 
 #board {

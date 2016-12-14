@@ -16,7 +16,8 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      started: false
+      started: false,
+      borders: true
     }
   }
 
@@ -53,6 +54,12 @@ class Main extends Component {
     clearInterval(this.iterate);
   }
 
+  toggleBorders() {
+    this.setState({
+      borders: !this.state.borders
+    })
+  }
+
   startButton(e) {
     e.preventDefault();
     this.setState({
@@ -85,7 +92,8 @@ class Main extends Component {
         <div className='container'>
           <div className='row'>
 
-            <div className='col-lg-7 col-md-12 col-sm-12 col-xs-12' >
+            <div className={ `col-lg-7 col-md-12 col-sm-12 col-xs-12 ${ this.state.borders ? 'borders' : '' }` } 
+                 onClick={ this.toggleBorders.bind(this) } >
               <Board />
             </div>
 
