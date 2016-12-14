@@ -1,5 +1,12 @@
 var shapes = { // shapes will be returned as objects with proper cells
-  glider: key => {
+  glider: key => { // cycle: 4
+    /*
+      - - - - -  
+      - - - G -
+      - G - G -
+      - - G G -
+      - - - - -
+    */
     return {
       [key]: true,
       [key + 58]: true,
@@ -9,19 +16,40 @@ var shapes = { // shapes will be returned as objects with proper cells
     }
   },
 
-  lightweightSpaceship: key => {
-
+  lightweightSpaceship: key => { // cycle: 4
+    /*
+      - - - - - - - 
+      - - S - - S - 
+      - S - - - - - 
+      - S - - - S - 
+      - S S S S - - 
+      - - - - - - - 
+    */
   },
 
   pulsar: key => {
 
   },
 
-  beacon: key => {
-
+  beacon: key => { // cycle: 2
+    /*
+      - - - - - - 
+      - B B - - - 
+      - B - - - - 
+      - - - - B - 
+      - - - B B - 
+      - - - - - - 
+    */ 
   },
 
-  blinker: (key, i) => {
+  blinker: (key, i) => { // cycle: 2
+    /*
+      - - - - - 
+      - - B - -
+      - - B - -
+      - - B - -
+      - - - - - 
+    */
     switch (i) {
       case 0:
         return {
