@@ -8,6 +8,7 @@ import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 import { adjustCellCount } from '../actions/statsAction.js';
 
+import keyGen from '../helpers/keyGen.js';
 import nextGen from '../helpers/nextGen.js';
 import shapes from '../helpers/shapesGen.js';
 
@@ -33,7 +34,11 @@ class Main extends Component {
       // 1900: true, 1958: true, 1960: true, 2019: true, 2020: true
     }
     // this.props.toggle(temp);
-    this.props.toggle(shapes.random(400));
+    // this.props.toggle(shapes.random(400));
+
+    for (var i = 0; i < 300; i++) { // toggle 300 random cells confined within 3 units from edge
+      this.props.toggle( { [keyGen()]: true } );
+    }
 
     // for (var i = 0; i < 20; i++) { // 20 random blinkers
     //   var key = (5 + Math.floor(Math.random() * 50)) + 300 + (Math.floor(Math.random() * 50) * 60);
