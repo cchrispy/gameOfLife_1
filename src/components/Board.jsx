@@ -8,6 +8,9 @@ import nextGen from '../helpers/nextGen.js';
 class Board extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      borders: true
+    }
   }
 
   componentDidMount() {
@@ -21,9 +24,17 @@ class Board extends Component {
     // clearInterval(this.iterate);
   }
 
+  toggleBorder() {
+    this.setState({
+      borders: !this.state.borders
+    })
+  }
+
   render() {
     return (
-      <div id='board' className='center'>
+      <div id='board' 
+           className={ `center ${ this.state.borders ? 'borders' : '' }` } 
+           onClick={ this.toggleBorder.bind(this) } >
         { _.range(3600).map((cell, i) => (
           <div className={ `cell ${ this.props.cellState[i + 1] ? 'alive' : '' }` } key={ i + 1 }></div>
         ))}
