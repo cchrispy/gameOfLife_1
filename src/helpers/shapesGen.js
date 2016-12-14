@@ -21,11 +21,20 @@ var shapes = { // shapes will be returned as objects with proper cells
 
   },
 
-  blinker: key => {
-    return {
-      [key]: true,
-      [key + 60]: true,
-      [key + 120]: true
+  blinker: (key, i) => {
+    switch (i) {
+      case 0:
+        return {
+          [key]: true,
+          [key + 60]: true,
+          [key + 120]: true
+        };
+      case 1:
+        return {
+          [key]: true,
+          [key - 1]: true,
+          [key + 1]: true
+        }
     }
   },
 

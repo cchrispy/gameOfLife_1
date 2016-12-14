@@ -36,6 +36,11 @@ class Main extends Component {
     // this.props.toggle(shapes.glider(1900));
     // this.props.toggle(shapes.blinker(1600));
     this.props.toggle(shapes.random(400));
+
+    // for (var i = 0; i < 20; i++) { // 20 random blinkers
+    //   var key = (5 + Math.floor(Math.random() * 50)) + 300 + (Math.floor(Math.random() * 50) * 60);
+    //   this.props.toggle(shapes.blinker(key, 1));
+    // }
   }
 
   componentDidMount() {
