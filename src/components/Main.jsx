@@ -33,8 +33,6 @@ class Main extends Component {
       // 1900: true, 1958: true, 1960: true, 2019: true, 2020: true
     }
     // this.props.toggle(temp);
-    // this.props.toggle(shapes.glider(1900));
-    // this.props.toggle(shapes.blinker(1600));
     this.props.toggle(shapes.random(400));
 
     // for (var i = 0; i < 20; i++) { // 20 random blinkers

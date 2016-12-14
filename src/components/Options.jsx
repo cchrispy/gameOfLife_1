@@ -43,9 +43,7 @@ class Options extends Component {
 
   submit(e) {
     e.preventDefault();
-    // this.props.newBoard(shapes.random(this.state.cellCountInput));
-
-    this.props.newBoard(shapes.blinker(500, 1));
+    this.props.newBoard(shapes.random(this.state.cellCountInput));
     this.props.adjustCellCount(this.state.cellCountInput);
   }
 
