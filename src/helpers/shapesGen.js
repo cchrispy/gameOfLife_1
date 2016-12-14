@@ -10,23 +10,55 @@ var shapes = { // shapes will be returned as objects with proper cells
       - - - - - || - - - - - || - - - - - || - - - - -
     */
 
+    var dir;
+    var period = cycle || 0;
+
     switch (i) {
       case 0: 
-        return {
+        dir = {
           [key]: true,
           [key + 58]: true,
           [key + 60]: true,
           [key + 119]: true,
           [key + 120]: true
         };
+        break;
+      case 1:
+        dir = {
+          [key]: true,
+          [key + 59]: true,
+          [key + 119]: true,
+          [key + 120]: true,
+          [key + 121]: true
+        };
+        break;
+      case 2:
+        dir = {
+          [key]: true,
+          [key + 1]: true,
+          [key + 60]: true,
+          [key + 62]: true,
+          [key + 120]: true
+        };
+        break;
+      case 3:
+        dir = {
+          [key]: true,
+          [key + 1]: true,
+          [key + 2]: true,
+          [key + 62]: true,
+          [key + 121]: true
+        };
+        break;
       default:
-        return {
+        dir = {
           [key]: true,
           [key + 58]: true,
           [key + 60]: true,
           [key + 119]: true,
           [key + 120]: true
         };
+        break;
     }
   },
 
