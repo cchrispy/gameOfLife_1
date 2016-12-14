@@ -1,29 +1,43 @@
+import nextGen from './nextGen';
+
 var shapes = { // shapes will be returned as objects with proper cells
-  glider: key => { // cycle: 4
+  glider: (key, i, cycle) => { // cycle: 4
     /*
-      - - - - -  
-      - - - G -
-      - G - G -
-      - - G G -
-      - - - - -
+      - - - - - || - - - - - || - - - - - || - - - - -
+      - - - G - || - - G - - || - G G - - || - G G G -
+      - G - G - || - G - - - || - G - G - || - - - G -
+      - - G G - || - G G G - || - G - - - || - - G - -
+      - - - - - || - - - - - || - - - - - || - - - - -
     */
-    return {
-      [key]: true,
-      [key + 58]: true,
-      [key + 60]: true,
-      [key + 119]: true,
-      [key + 120]: true
+
+    switch (i) {
+      case 0: 
+        return {
+          [key]: true,
+          [key + 58]: true,
+          [key + 60]: true,
+          [key + 119]: true,
+          [key + 120]: true
+        };
+      default:
+        return {
+          [key]: true,
+          [key + 58]: true,
+          [key + 60]: true,
+          [key + 119]: true,
+          [key + 120]: true
+        };
     }
   },
 
   lightweightSpaceship: key => { // cycle: 4
     /*
-      - - - - - - - 
-      - - S - - S - 
-      - S - - - - - 
-      - S - - - S - 
-      - S S S S - - 
-      - - - - - - - 
+      - - - - - - - || - - - - - - - || - - - - - - - || - - S - S - -
+      - - S - - S - || - S S S - - - || - - S S S S - || - - - - - S -
+      - S - - - - - || - S - - S - - || - S - - - S - || - - - - - S -
+      - S - - - S - || - S - - - - - || - - - - - S - || - - S - - S -
+      - S S S S - - || - S - - - - - || - S - - S - - || - - - S S S -
+      - - - - - - - || - - S - S - - || - - - - - - - || - - - - - - -
     */
   },
 
@@ -33,22 +47,22 @@ var shapes = { // shapes will be returned as objects with proper cells
 
   beacon: key => { // cycle: 2
     /*
-      - - - - - - 
-      - B B - - - 
-      - B - - - - 
-      - - - - B - 
-      - - - B B - 
-      - - - - - - 
+      - - - - - - || - - - - - - 
+      - B B - - - || - - - B B - 
+      - B - - - - || - - - - B - 
+      - - - - B - || - B - - - - 
+      - - - B B - || - B B - - - 
+      - - - - - - || - - - - - - 
     */ 
   },
 
   blinker: (key, i) => { // cycle: 2
     /*
-      - - - - - 
-      - - B - -
-      - - B - -
-      - - B - -
-      - - - - - 
+      - - - - - || - - - - -
+      - - B - - || - - - - -
+      - - B - - || - B B B -
+      - - B - - || - - - - -
+      - - - - - || - - - - -
     */
     switch (i) {
       case 0:
@@ -62,7 +76,13 @@ var shapes = { // shapes will be returned as objects with proper cells
           [key]: true,
           [key - 1]: true,
           [key + 1]: true
-        }
+        };
+      default:
+        return {
+          [key]: true,
+          [key + 60]: true,
+          [key + 120]: true
+        };
     }
   },
 
