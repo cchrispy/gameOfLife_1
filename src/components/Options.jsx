@@ -46,13 +46,13 @@ class Options extends Component {
     e.preventDefault();
     this.props.newBoard();
 
-    if (!this.state.gliderCountInput && !this.state.blinkerCountInput) {
+    if (!this.state.gliderCountInput && !this.state.blinkerCountInput) { // random cells
       this.props.toggle(shapes.random(this.state.cellCountInput));
     } else {
-      for (var i = 0; i < this.state.gliderCountInput; i++) {
+      for (var i = 0; i < this.state.gliderCountInput; i++) { // gliders
         this.props.toggle(shapes.glider(keyGen()));
       };
-      for (var i = 0; i < this.state.blinkerCountInput; i++) {
+      for (var i = 0; i < this.state.blinkerCountInput; i++) { // blinkers
         this.props.toggle(shapes.blinker(keyGen()));
       }
     }
