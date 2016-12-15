@@ -30,6 +30,11 @@ $dead-color: #5350F7;
   padding: 10px 0px;
 }
 
+#rules {
+  border: 5px solid black;
+  float: right;
+}
+
 .alive {
   background-color: $alive-color;
 }
