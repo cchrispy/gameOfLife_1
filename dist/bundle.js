@@ -23426,8 +23426,11 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+<<<<<<< HEAD
 	// import Rules from './Rules.jsx';
 
+=======
+>>>>>>> master
 
 	var Main = function (_Component) {
 	  _inherits(Main, _Component);
@@ -25375,10 +25378,13 @@
 
 	var _reactRedux = __webpack_require__(199);
 
+<<<<<<< HEAD
 	var _Rules = __webpack_require__(226);
 
 	var _Rules2 = _interopRequireDefault(_Rules);
 
+=======
+>>>>>>> master
 	var _toggleAction = __webpack_require__(215);
 
 	var _toggleAction2 = _interopRequireDefault(_toggleAction);
@@ -25614,8 +25620,12 @@
 	              className: 'btn btn-primary',
 	              disabled: this.props.simulationRunning ? 'disabled' : '' },
 	            'Submit'
+<<<<<<< HEAD
 	          ),
 	          _react2.default.createElement(_Rules2.default, null)
+=======
+	          )
+>>>>>>> master
 	        )
 	      );
 	    }
@@ -25909,7 +25919,11 @@
 
 
 	// module
+<<<<<<< HEAD
 	exports.push([module.id, ".cell {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  border: 1px solid white;\n  border-radius: 50%;\n  margin: 0px;\n  padding: 0px;\n  line-height: 0; }\n\n.borders .cell {\n  border: 1px solid #b3b3b3;\n  border-radius: 0px; }\n\n#board {\n  width: 600px;\n  line-height: 0;\n  margin: 0px; }\n\n#options {\n  margin: 10px 0px;\n  padding: 10px 0px; }\n\n#rules {\n  float: right; }\n\n.alive {\n  background-color: #60DA36; }\n\n.dead {\n  background-color: #5350F7; }\n\n.center {\n  text-align: center;\n  margin-top: 0px;\n  margin-left: auto;\n  margin-right: auto; }\n\n.iteration-btn {\n  margin: 5px 10px;\n  padding: 10px 30px; }\n\n.title {\n  margin: 10px 50px;\n  font-weight: bold;\n  font-size: 40px; }\n\n.padding-top {\n  padding-top: 20px; }\n", ""]);
+=======
+	exports.push([module.id, ".cell {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  border: 1px solid white;\n  border-radius: 50%;\n  margin: 0px;\n  padding: 0px;\n  line-height: 0; }\n\n.borders .cell {\n  border: 1px solid #b3b3b3;\n  border-radius: 0px; }\n\n#board {\n  width: 600px;\n  line-height: 0;\n  margin: 0px; }\n\n#options {\n  margin: 10px 0px;\n  padding: 10px 0px; }\n\n.alive {\n  background-color: #60DA36; }\n\n.dead {\n  background-color: #5350F7; }\n\n.center {\n  text-align: center;\n  margin-top: 0px;\n  margin-left: auto;\n  margin-right: auto; }\n\n.iteration-btn {\n  margin: 5px 10px;\n  padding: 10px 30px; }\n\n.title {\n  margin: 10px 50px;\n  font-weight: bold;\n  font-size: 40px; }\n\n.padding-top {\n  padding-top: 20px; }\n", ""]);
+>>>>>>> master
 
 	// exports
 
@@ -26222,6 +26236,7 @@
 	}
 
 
+<<<<<<< HEAD
 /***/ },
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
@@ -26333,5 +26348,7 @@
 
 	exports.default = Rules;
 
+=======
+>>>>>>> master
 /***/ }
 /******/ ]);
