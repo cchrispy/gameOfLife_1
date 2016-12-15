@@ -87,25 +87,44 @@ var shapes = { // shapes will be returned as objects with proper cells
     switch (i) {
       case 0:
         dir = {
-
+          [key]: true,
+          [key + 3]: true,
+          [key + 59]: true,
+          [key + 119]: true,
+          [key + 123]: true,
+          [key + 179]: true,
+          [key + 180]: true,
+          [key + 181]: true,
+          [key + 182]: true
         };
         break;
       case 1:
         dir = {
-          
+          [key]: true,
+          [key + 1]: true,
+          [key + 2]: true,
+          [key + 60]: true,
+          [key + 63]: true,
+          [key + 120]: true,
+          [key + 180]: true,
+          [key + 241]: true,
+          [key + 243]: true
         };
         break;
       case 2:
         dir = {
-          
+          [key]: true,
+          [key + 1]: true,
+          [key + 2]: true,
+          [key + 3]: true,
+          [key + 59]: true,
+          [key + 63]: true,
+          [key + 123]: true,
+          [key + 179]: true,
+          [key + 182]: true
         };
         break;
       case 3:
-        dir = {
-          
-        };
-        break;
-      default:
         dir = {
           [key]: true,
           [key + 2]: true,
@@ -118,7 +137,27 @@ var shapes = { // shapes will be returned as objects with proper cells
           [key + 243]: true
         };
         break;
+      default:
+        dir = {
+          [key]: true,
+          [key + 3]: true,
+          [key + 59]: true,
+          [key + 119]: true,
+          [key + 123]: true,
+          [key + 179]: true,
+          [key + 180]: true,
+          [key + 181]: true,
+          [key + 182]: true
+        };
+        break;
     }
+
+    for (var j = 0; j < cycle; j++) {
+      dir = nextGen(dir);
+    }
+
+    return dir;
+
   },
 
   pulsar: key => {
