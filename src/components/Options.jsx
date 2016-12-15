@@ -13,7 +13,8 @@ class Options extends Component {
     this.state = {
       cellCountInput: 400,
       gliderCountInput: 0,
-      blinkerCountInput: 0
+      blinkerCountInput: 0,
+      beaconCountInput: 0
     }
   }
 
@@ -22,14 +23,15 @@ class Options extends Component {
     this.setState({
       cellCountInput: e.target.value,
       gliderCountInput: 0,
-      blinkerCountInput: 0
+      blinkerCountInput: 0,
+      beaconCountInput: 0
     })
   }
 
   adjustGliderCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: (e.target.value * 5) + (this.state.blinkerCountInput * 3),
+      cellCountInput: (e.target.value * 5) + (this.state.blinkerCountInput * 3) + (this.state.beaconCountInput * 7),
       gliderCountInput: e.target.value
     });
   }
@@ -37,16 +39,26 @@ class Options extends Component {
   adjustBlinkerCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: (e.target.value * 3) + (this.state.gliderCountInput * 5),
+      cellCountInput: (e.target.value * 3) + (this.state.gliderCountInput * 5) + (this.state.beaconCountInput * 7),
       blinkerCountInput: e.target.value
     });
+  }
+
+  adjustBeaconCount(e) {
+    e.preventDefault();
+    this.setState({
+      cellCountInput: (e.target.value * 7) + (this.state.gliderCountInput * 5) + (this.state.blinkerCountInput * 3),
+      beaconCountInput: e.target.value
+    })
   }
 
   submit(e) {
     e.preventDefault();
     this.props.newBoard();
 
-    if (!this.state.gliderCountInput && !this.state.blinkerCountInput) { // random cells
+    if (!this.state.gliderCountInput 
+        && !this.state.blinkerCountInput
+        && !this.state.beaconCountInput) { // random cells
       this.props.toggle(shapes.random(this.state.cellCountInput));
     } else {
       for (var i = 0; i < this.state.gliderCountInput; i++) { // gliders
@@ -55,11 +67,14 @@ class Options extends Component {
       for (var i = 0; i < this.state.blinkerCountInput; i++) { // blinkers
         this.props.toggle(shapes.blinker(keyGen()));
       }
+      for (var i = 0; i < this.state.beaconCountInput; i++) { // beacons
+        this.props.toggle(shapes.beacon(keyGen()));
+      }
     }
-    
+
     this.props.adjustCellCount(this.state.cellCountInput);
-    this.props.adjustGliderCount(this.state.gliderCountInput);
-    this.props.adjustBlinkerCount(this.state.blinkerCountInput);
+    // this.props.adjustGliderCount(this.state.gliderCountInput);
+    // this.props.adjustBlinkerCount(this.state.blinkerCountInput);
   }
 
   render() {
@@ -67,7 +82,7 @@ class Options extends Component {
       <div id='options'>
         <form onSubmit={ this.submit.bind(this) } >
           <div className='form-group'>
-            <label htmlFor='cellCount'>Number of starting cells: { this.state.cellCountInput } </label>
+            <label htmlFor='cellCount'>Number of starting cells: ~{ this.state.cellCountInput } </label>
             <input type='range' 
                    min='10'
                    max='1000'
@@ -101,6 +116,19 @@ class Options extends Component {
                    onChange={ this.adjustBlinkerCount.bind(this) }
                    disabled={ this.props.simulationRunning ? true : false } 
                    id='blinkerCount' ></input>
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='beaconCount'>Number of beacons: { this.state.beaconCountInput } </label>
+            <input type='range'
+                   min='0'
+                   max='12'
+                   value={ this.state.beaconCountInput }
+                   step='1'
+                   className='form-control'
+                   onChange={ this.adjustBeaconCount.bind(this) }
+                   disabled={ this.props.simulationRunning ? true : false }
+                   id='beaconCount' ></input>
           </div>
 
           <button type='submit' 
