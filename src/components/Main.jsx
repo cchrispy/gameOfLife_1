@@ -83,11 +83,12 @@ class Main extends Component {
   }
 
   resetButton(e) {
-    e.preventDefault();
-    this.setState({
-      started: false
-    });
-    this.endSimulation();
+    // e.preventDefault();
+    // this.setState({
+    //   started: false
+    // });
+    // this.endSimulation();
+    this.stopButton(e);
     this.props.iterate('reset');
   }
 

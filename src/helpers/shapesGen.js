@@ -96,7 +96,7 @@ var shapes = { // shapes will be returned as objects with proper cells
     */ 
   },
 
-  blinker: (key, i) => { // cycle: 2
+  blinker: key => { // cycle: 2
     /*
       - - - - - || - - - - -
       - - B - - || - - - - -
@@ -104,6 +104,9 @@ var shapes = { // shapes will be returned as objects with proper cells
       - - B - - || - - - - -
       - - - - - || - - - - -
     */
+
+    var i = Math.floor(Math.random() * 2);
+
     switch (i) {
       case 0:
         return {
