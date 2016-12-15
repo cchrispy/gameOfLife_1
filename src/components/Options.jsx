@@ -28,22 +28,23 @@ class Options extends Component {
   adjustGliderCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: 0,
+      cellCountInput: (e.target.value * 5) + (this.state.blinkerCountInput * 3),
       gliderCountInput: e.target.value
-    })
+    });
   }
 
   adjustBlinkerCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: 0,
+      cellCountInput: (e.target.value * 3) + (this.state.gliderCountInput * 5),
       blinkerCountInput: e.target.value
-    })
+    });
   }
 
   submit(e) {
     e.preventDefault();
     this.props.newBoard(shapes.random(this.state.cellCountInput));
+    
     this.props.adjustCellCount(this.state.cellCountInput);
   }
 
