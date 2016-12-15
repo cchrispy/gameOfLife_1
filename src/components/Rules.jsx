@@ -23,10 +23,13 @@ class Rules extends Component {
     //   </div>
     // )
     return (
-      <div id='rules' className='dropup center'>
+      <div id='rules' className='dropup pull-right'>
         <button className='btn btn-info' data-toggle='dropdown' >Rules</button>
         <ul className='dropdown-menu dropdown-menu-right' role='menu'>
-          <li>Rule Numero Uno</li>
+          <li><a href='#'>Rule Numero Uno</a></li>
+          <li><a href='#'>Rule Numero Dos</a></li>
+          <li><a href='#'>Rule Numero Tres</a></li>
+          <li><a href='#'>Rule Numero Quatro</a></li>
         </ul>
       </div>
     )

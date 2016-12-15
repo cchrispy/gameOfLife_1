@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Rules from './Rules.jsx';
 import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 import shapes from '../helpers/shapesGen.js';
@@ -172,9 +173,12 @@ class Options extends Component {
                    id='lightweightSpaceshipCount' ></input>
           </div>
 
+
           <button type='submit' 
                   className='btn btn-primary' 
                   disabled={ this.props.simulationRunning ? 'disabled' : '' } >Submit</button>
+
+          <Rules />
 
         </form>
       </div>
