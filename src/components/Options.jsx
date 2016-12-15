@@ -56,7 +56,10 @@ class Options extends Component {
         this.props.toggle(shapes.blinker(keyGen()));
       }
     }
+    
     this.props.adjustCellCount(this.state.cellCountInput);
+    this.props.adjustGliderCount(this.state.gliderCountInput);
+    this.props.adjustBlinkerCount(this.state.blinkerCountInput);
   }
 
   render() {
@@ -123,7 +126,6 @@ const mapDispatchToProps = dispatch => ({
   },
   newBoard: () => {
     dispatch(reset());
-    // dispatch(toggle(cells));
   },
   toggle: cells => {
     dispatch(toggle(cells));

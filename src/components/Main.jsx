@@ -67,11 +67,6 @@ class Main extends Component {
     this.endSimulation();
   }
 
-  resetButton(e) {
-    this.stopButton(e);
-    this.props.iterate('reset');
-  }
-
   stepButton(e) {
     e.preventDefault();
     this.props.toggle(nextGen(this.props.store.cellState));
