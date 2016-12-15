@@ -25,7 +25,8 @@ class Options extends Component {
       cellCountInput: e.target.value,
       gliderCountInput: 0,
       blinkerCountInput: 0,
-      beaconCountInput: 0
+      beaconCountInput: 0,
+      lightweightSpaceshipCountInput: 0,
     })
   }
 
@@ -175,7 +176,7 @@ class Options extends Component {
           <button type='submit' 
                   className='btn btn-primary' 
                   disabled={ this.props.simulationRunning ? 'disabled' : '' } >Submit</button>
-                  
+
         </form>
       </div>
     )
