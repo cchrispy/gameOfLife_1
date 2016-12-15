@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 import shapes from '../helpers/shapesGen.js';
+import keyGen from '../helpers/keyGen.js';
 import { adjustCellCount, adjustGliderCount, adjustBlinkerCount } from '../actions/statsAction.js';
 
 class Options extends Component {
@@ -43,8 +44,18 @@ class Options extends Component {
 
   submit(e) {
     e.preventDefault();
-    this.props.newBoard(shapes.random(this.state.cellCountInput));
-    
+    this.props.newBoard();
+
+    if (!this.state.gliderCountInput && !this.state.blinkerCountInput) {
+      this.props.toggle(shapes.random(this.state.cellCountInput));
+    } else {
+      for (var i = 0; i < this.state.gliderCountInput; i++) {
+        this.props.toggle(shapes.glider(keyGen()));
+      };
+      for (var i = 0; i < this.state.blinkerCountInput; i++) {
+        this.props.toggle(shapes.blinker(keyGen()));
+      }
+    }
     this.props.adjustCellCount(this.state.cellCountInput);
   }
 
@@ -110,8 +121,11 @@ const mapDispatchToProps = dispatch => ({
   adjustBlinkerCount: blinkerCount => {
     dispatch(adjustBlinkerCount(blinkerCount));
   },
-  newBoard: cells => {
+  newBoard: () => {
     dispatch(reset());
+    // dispatch(toggle(cells));
+  },
+  toggle: cells => {
     dispatch(toggle(cells));
   }
 })
