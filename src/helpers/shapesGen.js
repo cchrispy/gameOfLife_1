@@ -1,7 +1,7 @@
 import nextGen from './nextGen';
 
 var shapes = { // shapes will be returned as objects with proper cells
-  glider: (key, i, cycle) => { // cycle: 4
+  glider: key => { // cycle: 4
     /*
       - - - - - || - - - - - || - - - - - || - - - - -
       - - - G - || - - G - - || - G G - - || - G G G -
@@ -11,7 +11,8 @@ var shapes = { // shapes will be returned as objects with proper cells
     */
 
     var dir;
-    var period = cycle || 0;
+    var i = Math.floor(Math.random() * 4);
+    var cycle = Math.floor(Math.random() * 4);
 
     switch (i) {
       case 0: 
@@ -59,7 +60,14 @@ var shapes = { // shapes will be returned as objects with proper cells
           [key + 120]: true
         };
         break;
+    };
+
+    for (var j = 0; j < cycle; j++) {
+      dir = nextGen(dir);
     }
+
+    return dir;
+
   },
 
   lightweightSpaceship: key => { // cycle: 4

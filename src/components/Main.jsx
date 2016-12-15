@@ -36,8 +36,13 @@ class Main extends Component {
     // this.props.toggle(temp);
     // this.props.toggle(shapes.random(400));
 
-    for (var i = 0; i < 300; i++) { // toggle 300 random cells confined within 3 units from edge
-      this.props.toggle( { [keyGen()]: true } );
+    // for (var i = 0; i < 300; i++) { // toggle 300 random cells confined within 3 units from edge
+    //   this.props.toggle( { [keyGen()]: true } );
+    // }
+
+    for (var i = 0; i < 12; i++) { // toggle 20 random gliders in different directions
+      var location = keyGen();
+      this.props.toggle(shapes.glider(location));
     }
 
     // for (var i = 0; i < 20; i++) { // 20 random blinkers
