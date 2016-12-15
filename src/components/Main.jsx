@@ -22,6 +22,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
+    this.props.initialCellCount(400);
     this.props.toggle(shapes.random(400)); // start with 400 random cells
   }
 

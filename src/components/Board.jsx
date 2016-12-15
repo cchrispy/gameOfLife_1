@@ -13,17 +13,6 @@ class Board extends Component {
     }
   }
 
-  componentDidMount() {
-    // this.iterate = setTimeout(() => {
-    //   this.props.toggle(nextGen(this.props.cellState));
-    //   this.props.iterate('next');
-    // }, 100)
-  }
-
-  componentWillUnmount() {
-    // clearInterval(this.iterate);
-  }
-
   toggleBorder() {
     this.setState({
       borders: !this.state.borders
@@ -45,15 +34,4 @@ class Board extends Component {
 
 const mapStateToProps = state => state;
 
-const mapDispatchToProps = dispatch => ({
-  toggle: cells => {
-    dispatch(toggle(cells));
-  },
-  iterate: command => {
-    if (command === 'next') {
-      dispatch(next());
-    }
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Board);
+export default connect(mapStateToProps)(Board);

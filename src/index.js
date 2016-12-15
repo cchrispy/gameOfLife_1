@@ -32,7 +32,7 @@ import Main from './components/Main.jsx';
 const store = createStore(rootReducer);
 
 const refresh = () => {
-  // console.log(store.getState());
+  console.log(store.getState());
   render(
     <Provider store={ store }>
       <Main />

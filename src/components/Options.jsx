@@ -99,8 +99,7 @@ class Options extends Component {
     }
 
     this.props.adjustCellCount(this.state.cellCountInput);
-    // this.props.adjustGliderCount(this.state.gliderCountInput);
-    // this.props.adjustBlinkerCount(this.state.blinkerCountInput);
+    
   }
 
   render() {
@@ -188,12 +187,6 @@ const mapStateToProps = state => state.stats;
 const mapDispatchToProps = dispatch => ({
   adjustCellCount: cellCount => {
     dispatch(adjustCellCount(cellCount));
-  },
-  adjustGliderCount: gliderCount => {
-    dispatch(adjustGliderCount(gliderCount));
-  },
-  adjustBlinkerCount: blinkerCount => {
-    dispatch(adjustBlinkerCount(blinkerCount));
   },
   newBoard: () => {
     dispatch(reset());

@@ -1,4 +1,4 @@
-const stats = (state = { cellCount: 400 }, action) => {
+const stats = (state = {}, action) => {
   switch (action.type) {
     case 'CELL_COUNT':
       return Object.assign({}, state, {
