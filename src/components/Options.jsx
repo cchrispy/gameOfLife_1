@@ -93,7 +93,7 @@ class Options extends Component {
         this.props.toggle(shapes.beacon(keyGen()));
       }
       for (var i = 0; i < this.state.lightweightSpaceshipCountInput; i++) { // lightweightSpaceships
-        this.props.toggle(shapes.lightweightSpaceship(keyGen()));
+        this.props.toggle(shapes.lightweightSpaceship(keyGen() - 61));
       }
     }
 
@@ -106,6 +106,7 @@ class Options extends Component {
     return (
       <div id='options'>
         <form onSubmit={ this.submit.bind(this) } >
+
           <div className='form-group'>
             <label htmlFor='cellCount'>Number of starting cells: ~{ this.state.cellCountInput } </label>
             <input type='range' 
@@ -118,18 +119,7 @@ class Options extends Component {
                    disabled={ this.props.simulationRunning ? true : false } 
                    id='cellCount' ></input>
           </div>
-          <div className='form-group'>
-            <label htmlFor='gliderCount'>Number of gliders: { this.state.gliderCountInput } </label>
-            <input type='range'
-                   min='0'
-                   max='12'
-                   value={ this.state.gliderCountInput }
-                   step='1'
-                   className='form-control'
-                   onChange={ this.adjustGliderCount.bind(this) }
-                   disabled={ this.props.simulationRunning ? true : false } 
-                   id='gliderCount' ></input>
-          </div>
+
           <div className='form-group'>
             <label htmlFor='blinkerCount'>Number of blinkers: { this.state.blinkerCountInput } </label>
             <input type='range'
@@ -157,10 +147,23 @@ class Options extends Component {
           </div>
 
           <div className='form-group'>
-            <label htmlFor='lightweightSpaceshipCount'>Number of lightweight spaceships: { this.state.lightweightSpaceshipCountInput } </label>
+            <label htmlFor='gliderCount'>Number of gliders: { this.state.gliderCountInput } </label>
             <input type='range'
                    min='0'
                    max='12'
+                   value={ this.state.gliderCountInput }
+                   step='1'
+                   className='form-control'
+                   onChange={ this.adjustGliderCount.bind(this) }
+                   disabled={ this.props.simulationRunning ? true : false } 
+                   id='gliderCount' ></input>
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='lightweightSpaceshipCount'>Number of lightweight spaceships: { this.state.lightweightSpaceshipCountInput } </label>
+            <input type='range'
+                   min='0'
+                   max='10'
                    value={ this.state.lightweightSpaceshipCountInput }
                    step='1'
                    className='form-control'
@@ -172,6 +175,7 @@ class Options extends Component {
           <button type='submit' 
                   className='btn btn-primary' 
                   disabled={ this.props.simulationRunning ? 'disabled' : '' } >Submit</button>
+                  
         </form>
       </div>
     )

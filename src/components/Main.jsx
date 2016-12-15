@@ -22,22 +22,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-
     this.props.toggle(shapes.random(400)); // start with 400 random cells
-
-    // for (var i = 0; i < 300; i++) { // toggle 300 random cells confined within 3 units from edge
-    //   this.props.toggle( { [keyGen()]: true } );
-    // }
-
-    // for (var i = 0; i < 12; i++) { // toggle 20 random gliders in different directions
-    //   var location = keyGen();
-    //   this.props.toggle(shapes.glider(location));
-    // }
-
-    // for (var i = 0; i < 20; i++) { // 20 random blinkers
-    //   var key = (5 + Math.floor(Math.random() * 50)) + 300 + (Math.floor(Math.random() * 50) * 60);
-    //   this.props.toggle(shapes.blinker(key, 1));
-    // }
   }
 
   simulate() {
