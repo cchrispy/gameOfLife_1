@@ -14,7 +14,8 @@ class Options extends Component {
       cellCountInput: 400,
       gliderCountInput: 0,
       blinkerCountInput: 0,
-      beaconCountInput: 0
+      beaconCountInput: 0,
+      lightweightSpaceshipCountInput: 0,
     }
   }
 
@@ -31,7 +32,10 @@ class Options extends Component {
   adjustGliderCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: (e.target.value * 5) + (this.state.blinkerCountInput * 3) + (this.state.beaconCountInput * 7),
+      cellCountInput: (e.target.value * 5) 
+                      + (this.state.blinkerCountInput * 3) 
+                      + (this.state.beaconCountInput * 7)
+                      + (this.state.lightweightSpaceshipCountInput * 11),
       gliderCountInput: e.target.value
     });
   }
@@ -39,7 +43,10 @@ class Options extends Component {
   adjustBlinkerCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: (e.target.value * 3) + (this.state.gliderCountInput * 5) + (this.state.beaconCountInput * 7),
+      cellCountInput: (e.target.value * 3) 
+                      + (this.state.gliderCountInput * 5) 
+                      + (this.state.beaconCountInput * 7)
+                      + (this.state.lightweightSpaceshipCountInput * 11),
       blinkerCountInput: e.target.value
     });
   }
@@ -47,8 +54,22 @@ class Options extends Component {
   adjustBeaconCount(e) {
     e.preventDefault();
     this.setState({
-      cellCountInput: (e.target.value * 7) + (this.state.gliderCountInput * 5) + (this.state.blinkerCountInput * 3),
+      cellCountInput: (e.target.value * 7) 
+                      + (this.state.gliderCountInput * 5) 
+                      + (this.state.blinkerCountInput * 3)
+                      + (this.state.lightweightSpaceshipCountInput * 11),
       beaconCountInput: e.target.value
+    })
+  }
+
+  adjustLightweightSpaceshipCount(e) {
+    e.preventDefault();
+    this.setState({
+      cellCountInput: (e.target.value * 11) 
+                      + (this.state.gliderCountInput * 5) 
+                      + (this.state.blinkerCountInput * 3)
+                      + (this.state.beaconCountInput * 7),
+      lightweightSpaceshipCountInput: e.target.value
     })
   }
 
@@ -58,7 +79,8 @@ class Options extends Component {
 
     if (!this.state.gliderCountInput 
         && !this.state.blinkerCountInput
-        && !this.state.beaconCountInput) { // random cells
+        && !this.state.beaconCountInput
+        && !this.state.lightweightSpaceshipCountInput) { // random cells
       this.props.toggle(shapes.random(this.state.cellCountInput));
     } else {
       for (var i = 0; i < this.state.gliderCountInput; i++) { // gliders
@@ -69,6 +91,9 @@ class Options extends Component {
       }
       for (var i = 0; i < this.state.beaconCountInput; i++) { // beacons
         this.props.toggle(shapes.beacon(keyGen()));
+      }
+      for (var i = 0; i < this.state.lightweightSpaceshipCountInput; i++) { // lightweightSpaceships
+        this.props.toggle(shapes.lightweightSpaceship(keyGen()));
       }
     }
 
@@ -129,6 +154,19 @@ class Options extends Component {
                    onChange={ this.adjustBeaconCount.bind(this) }
                    disabled={ this.props.simulationRunning ? true : false }
                    id='beaconCount' ></input>
+          </div>
+
+          <div className='form-group'>
+            <label htmlFor='lightweightSpaceshipCount'>Number of lightweight spaceships: { this.state.lightweightSpaceshipCountInput } </label>
+            <input type='range'
+                   min='0'
+                   max='12'
+                   value={ this.state.lightweightSpaceshipCountInput }
+                   step='1'
+                   className='form-control'
+                   onChange={ this.adjustLightweightSpaceshipCount.bind(this) }
+                   disabled={ this.props.simulationRunning ? true : false }
+                   id='lightweightSpaceshipCount' ></input>
           </div>
 
           <button type='submit' 
