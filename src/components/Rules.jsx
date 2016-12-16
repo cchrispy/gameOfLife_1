@@ -17,10 +17,21 @@ class Rules extends Component {
       <div id='rules' className='dropup pull-right'>
         <button className='btn btn-info' data-toggle='dropdown' >Rules</button>
         <ul className='dropdown-menu dropdown-menu-right' role='menu'>
-          <li><a href='#' data-toggle='tooltip' title={ this.rules.underPopulation } >Under-population</a></li>
-          <li><a href='#' data-toggle='tooltip' title={ this.rules.stability } >Stability</a></li>
-          <li><a href='#' data-toggle='tooltip' title={ this.rules.overPopulation } >Over-population</a></li>
-          <li><a href='#' data-toggle='tooltip' title={ this.rules.reproduction } >Reproduction</a></li>
+          <li className='text-right'><a href='#' data-toggle='tooltip' 
+                 data-placement='left' 
+                 title={ this.rules.underPopulation } >Under-population</a></li>
+          <li className='text-right'><a href='#' 
+                 data-toggle='tooltip' 
+                 data-placement='left' 
+                 title={ this.rules.stability } >Stability</a></li>
+          <li className='text-right'><a href='#' 
+                 data-toggle='tooltip' 
+                 data-placement='left' 
+                 title={ this.rules.overPopulation } >Over-population</a></li>
+          <li className='text-right'><a href='#' 
+                 data-toggle='tooltip' 
+                 data-placement='left' 
+                 title={ this.rules.reproduction } >Reproduction</a></li>
         </ul>
       </div>
     )
