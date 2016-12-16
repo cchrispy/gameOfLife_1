@@ -1,3 +1,7 @@
-node_modules
-.DS_Store
-dist
+# ignore everything
+*
+
+# except for index.html and bundle.js
+!.gitignore
+!index.html
+!bundle.js
