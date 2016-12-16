@@ -19,19 +19,19 @@ class Rules extends Component {
         <ul className='dropdown-menu dropdown-menu-right' role='menu'>
           <li className='text-right'><a href='#' data-toggle='tooltip' 
                  data-placement='left' 
-                 title={ this.rules.underPopulation } >Under-population</a></li>
+                 title={ this.rules.underPopulation } >Under-population <span className='glyphicon glyphicon-stop'></span></a></li>
           <li className='text-right'><a href='#' 
                  data-toggle='tooltip' 
                  data-placement='left' 
-                 title={ this.rules.stability } >Stability</a></li>
+                 title={ this.rules.stability } >Stability <span className="glyphicon glyphicon-th-large"></span></a></li>
           <li className='text-right'><a href='#' 
                  data-toggle='tooltip' 
                  data-placement='left' 
-                 title={ this.rules.overPopulation } >Over-population</a></li>
+                 title={ this.rules.overPopulation } >Over-population <span className='glyphicon glyphicon-th'></span></a></li>
           <li className='text-right'><a href='#' 
                  data-toggle='tooltip' 
                  data-placement='left' 
-                 title={ this.rules.reproduction } >Reproduction</a></li>
+                 title={ this.rules.reproduction } >Reproduction <span className='glyphicon glyphicon-move'></span></a></li>
         </ul>
       </div>
     )
