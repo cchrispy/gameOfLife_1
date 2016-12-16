@@ -26,10 +26,10 @@ class Rules extends Component {
       <div id='rules' className='dropup pull-right'>
         <button className='btn btn-info' data-toggle='dropdown' >Rules</button>
         <ul className='dropdown-menu dropdown-menu-right' role='menu'>
-          <li><a href='#'>Rule Numero Uno</a></li>
-          <li><a href='#'>Rule Numero Dos</a></li>
-          <li><a href='#'>Rule Numero Tres</a></li>
-          <li><a href='#'>Rule Numero Quatro</a></li>
+          <li><a href='#'>Under-population</a></li>
+          <li><a href='#'>Stability</a></li>
+          <li><a href='#'>Over-population</a></li>
+          <li><a href='#'>Reproduction</a></li>
         </ul>
       </div>
     )
