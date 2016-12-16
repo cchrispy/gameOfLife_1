@@ -13,21 +13,6 @@ class Rules extends Component {
   }
 
   render() {
-    // return (
-    //   <div id='rules' className='center'>
-    //     <div className='dropup'>
-    //       <button type='button' 
-    //               className='btn btn-info' 
-    //               data-toggle='dropdown'>
-    //         Rules <span className='caret'></span>
-    //       </button>
-    //       <ul className='dropdown-menu center'>
-    //         <li>hi</li>
-    //         <li>yoyoyo</li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // )
     return (
       <div id='rules' className='dropup pull-right'>
         <button className='btn btn-info' data-toggle='dropdown' >Rules</button>
