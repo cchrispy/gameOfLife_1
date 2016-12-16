@@ -13,10 +13,12 @@ $dead-color: #5350F7;
 }
 
 .borders {
+
   .cell {
     border: 1px solid #b3b3b3;
     border-radius: 0px;
   }
+  
 }
 
 #board {
@@ -28,13 +30,24 @@ $dead-color: #5350F7;
 #options {
   margin: 10px 0px;
   padding: 10px 0px;
+
+  form {
+
+    button {
+      font-size: 1.2em;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+  }
 }
 
 #rules {
-  float: right;
+
   li {
     padding-left: 20px;
   }
+
 }
 
 .alive {
