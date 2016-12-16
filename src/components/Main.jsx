@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Board from './Board.jsx';
 import Options from './Options.jsx';
-// import Rules from './Rules.jsx';
 import '../styles/main.scss';
 
 import toggle from '../actions/toggleAction.js';

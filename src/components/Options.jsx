@@ -6,7 +6,7 @@ import toggle from '../actions/toggleAction.js';
 import { next, prev, reset } from '../actions/iterationAction.js';
 import shapes from '../helpers/shapesGen.js';
 import keyGen from '../helpers/keyGen.js';
-import { adjustCellCount, adjustGliderCount, adjustBlinkerCount } from '../actions/statsAction.js';
+import { adjustCellCount } from '../actions/statsAction.js';
 
 class Options extends Component {
   constructor(props) {
