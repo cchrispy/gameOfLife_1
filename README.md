@@ -1,5 +1,5 @@
 # Conway's Game Of Life  
-Javascript simulation of Conway's Game Of Life
+Javascript simulation of Conway's Game Of Life  
 Check it out [here](https://cchrispy.github.io/gameOfLife_1/)
 
 ## Setup
