@@ -4,13 +4,13 @@ Check it out [here](https://cchrispy.github.io/gameOfLife_1/)
 
 ## Setup
 Clone down repository  
-`git clone https://github.com/cchrispy/gameOfLife_1.git`
+`$ git clone https://github.com/cchrispy/gameOfLife_1.git`
 
 Install dependencies  
-`npm install`
+`$ npm install`
 
 Compile src files  
-`npm run build`
+`$ npm run build`
 
 Open index file  
-`open dist/index.html`
+`$ open dist/index.html`
